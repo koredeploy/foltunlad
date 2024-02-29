@@ -1,0 +1,32 @@
+@use "global";
+@use "utils";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "RobotoCondensed-Light";
+  src: local("RobotoCondensed-Light"), url("../fonts/RobotoCondensed-Light.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "RobotoCondensed-Regular";
+  src: local("RobotoCondensed-Regular"), url("../fonts/RobotoCondensed-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "RobotoCondensed-Medium";
+  src: local("RobotoCondensed-Medium"), url("../fonts/RobotoCondensed-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+
+
+
+
+
+// src/fonts/BricolageGrotesque-Regular.ttf

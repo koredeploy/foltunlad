@@ -1,0 +1,5 @@
+@use "../../../scss/global/colors" as color;
+
+.content{
+    background-color: color.$green-100;
+}

@@ -1,0 +1,50 @@
+@use "../utils" as utils;
+@use "./colors" as colors;
+@use "../utils/functions" as fn;
+
+html {
+  box-sizing: border-box;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-stroke-width: 0.1px;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+
+  @media screen and (min-width: 1024px) {
+    // display: initial;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "RobotoCondensed-Regular", sans-serif;
+}
+
+a,
+a:visited,
+a:active {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: "RobotoCondensed-Medium", sans-serif;
+}
+p{
+  font-family: "RobotoCondensed-Light", sans-serif;
+}
+
+ul {
+  list-style: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
