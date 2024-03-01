@@ -10,6 +10,12 @@ import { Fade as Hamburger } from 'hamburger-react'
 const Navbar = () => {
   const {pathname} = useLocation()
   const [show, setShow] = useState(false)
+  const [isOpen, setOpen] = useState(false);
+
+  const handleHamburger = () => {
+    setShow(false)
+    setOpen(false)
+  }
 
   
   return (
@@ -18,7 +24,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center lg:mt-4">
           <div className="flex items-center">
             <div className="lg:hidden block z-50" onClick={() => setShow(!show)}>
-            <Hamburger direction="right" size={32}/>
+            <Hamburger direction="right" size={32} toggled={isOpen} toggle={setOpen}/>
             </div>
             <span>
               <Link to="/">
@@ -55,7 +61,7 @@ const Navbar = () => {
         <div className="flex gap-1 lg:translate-y-12 z-10 bg-white-100 justify-between lg:max-w-[1189px] lg:h-[83px] lg:mx-auto items-center lg:border-2 border-black-100 border-opacity-40 shadow-black-100 lg:shadow-md lg:p-5 lg:rounded-full">
           <div><span><img src={search_icon} alt="" className="md:w-auto w-[35px] cursor-pointer" /></span></div>
           <div className={`${show ? "block" : "lg:block hidden"} lg:relative absolute bg-white-200 lg:w-auto w-full lg:h-full h-screen top-0 left-0`}>
-            <nav className="lg:block lg:p-2 p-7">
+            <nav className="lg:block lg:p-2 p-7" onClick={handleHamburger}>
               <ul  className="flex lg:flex-row flex-col gap-12 text-xl items-center">
                 <li><Link className={pathname === "/" && "text-green-100"}>Home</Link></li>
                 <li><Link>About</Link></li>
