@@ -1,0 +1,31 @@
+@use "../../../../scss/style.scss";
+@use "../../../../scss/utils/functions" as fn;
+
+.contact-bg {
+  background-image: url(../../../../assets/backgroundImages/contact-bg.png);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+@media(width > fn.rem(400)){
+  .hero-bg{
+      height: fn.rem(350);
+  }
+  }
+
+
+
+@media(width > fn.rem(1024)){
+  .hero-bg{
+      height: fn.rem(458);
+  }
+  }
+
+  @media(width > 1440px){
+    .hero-bg{
+      padding: 5rem  0rem;
+        min-height: fn.rem(458);
+    }
+    }

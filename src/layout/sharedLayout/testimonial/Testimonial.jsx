@@ -1,32 +1,50 @@
-// import React from 'react'
 import {Content} from './content'
-// import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import quote from '../../../assets/icons/Group.svg'
+// import profileImage from '../../../assets/images/profile-img.png'
+import "./style/Testimonial.scss"
 const Testimonial = () => {
-  // console.log(Content);
-  const { slide1, slide2 } = Content
+  const { slideContent } = Content
 
-  console.log(slide1, slide2);
-  const {Image, name, text, job} = slide1
+  console.log(slideContent);
+  const { profileImg } = slideContent
 
+console.log(profileImg);
   return (
-    <div>
-      Testimonial
-      <div>
-        {/* <img src={} alt="" /> */}
-      </div>
-    </div>
-    // <Swiper
-    //       spaceBetween={50}
-    //       slidesPerView={1}
-    //       onSlideChange={() => console.log('slide change')}
-    //       onSwiper={(swiper) => console.log(swiper)}
-    //     >
-    //       <SwiperSlide>Slide 1</SwiperSlide>
-    //       <SwiperSlide>Slide 2</SwiperSlide>
-    //       <SwiperSlide>Slide 3</SwiperSlide>
-    //       <SwiperSlide>Slide 4</SwiperSlide>
-    //       ...
-    //     </Swiper>
+<div className='w-11/12 mx-auto responsive'>
+
+<Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Autoplay]}
+          className="mySwiper"
+        >
+          {slideContent.map((slide, index) => (
+        <SwiperSlide key={index} className='flex flex-col justify-center items-center py-10 '>
+          <img src={quote} alt="" />
+          <p className='text-center w-full lg:w-4/12 mx-auto py-4'>{slide.text}</p>
+            <img src={slide.profileImg} alt="" className='object-cover ' />
+            
+          <h4 className='text-center pt-4'>{slide.name}</h4>
+          <p className='text-center'>{slide.job}</p>
+        </SwiperSlide>
+      ))}
+        </Swiper>
+</div>
   )
 }
 
