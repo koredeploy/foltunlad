@@ -1,0 +1,11 @@
+@use "../../../scss/global/colors" as color;
+
+.globalcom-container {
+  background-color: color.$green-200; /* Apply background color to this container */
+}
+
+.globalcom {
+  max-width: 1100px; /* Limit the maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+}
+

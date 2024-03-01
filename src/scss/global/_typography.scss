@@ -56,11 +56,11 @@ span {
 }
 
 .small-text {
-  @include fluid-type($min_width, $max_width, 14px, 14px);
+  @include fluid-type($min_width, $max_width, 15px, 15px);
 }
 
 .medium-text {
-  @include fluid-type($min_width, $max_width, 16px, 20px);
+  @include fluid-type($min_width, $max_width, 16px, 30px);
 }
 
 .large-text {
