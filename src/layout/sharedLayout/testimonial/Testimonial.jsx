@@ -4,7 +4,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import quote from '../../../assets/icons/Group.svg'
-import profileImage from '../../../assets/images/profile-img.png'
+// import profileImage from '../../../assets/images/profile-img.png'
 import "./style/Testimonial.scss"
 const Testimonial = () => {
   const { slideContent } = Content
@@ -37,7 +37,7 @@ console.log(profileImg);
         <SwiperSlide key={index} className='flex flex-col justify-center items-center py-10 '>
           <img src={quote} alt="" />
           <p className='text-center w-full lg:w-4/12 mx-auto py-4'>{slide.text}</p>
-            <img src={profileImage} alt="" className='object-cover ' />
+            <img src={slide.profileImg} alt="" className='object-cover ' />
             
           <h4 className='text-center pt-4'>{slide.name}</h4>
           <p className='text-center'>{slide.job}</p>
