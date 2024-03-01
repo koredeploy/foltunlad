@@ -60,11 +60,17 @@ span {
 }
 
 .medium-text {
-  @include fluid-type($min_width, $max_width, 16px, 30px);
+  @include fluid-type($min_width, $max_width, 16px, 23px);
+  font-weight: 500;
+}
+.big-text{
+  @include fluid-type($min_width, $max_width, 16px, 22px);
+  font-weight: 400;
 }
 
 .large-text {
   @include fluid-type($min_width, $max_width, 20px, 40px);
+  font-weight: 600;
   
 }
 

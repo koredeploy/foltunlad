@@ -1,0 +1,5 @@
+@use "../../../../scss/utils/functions" as fn;
+@use "../../../../scss/utils/mixins" as mixin;
+.responsive{
+@include mixin.responsive;
+}

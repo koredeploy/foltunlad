@@ -1,5 +1,9 @@
 @use "../../../scss/global/colors" as color;
+@use "../../../scss/utils/mixins" as mixin;
 
 .content{
     background-color: color.$green-100;
+    .responsive{
+        @include mixin.responsive;
+    }
 }

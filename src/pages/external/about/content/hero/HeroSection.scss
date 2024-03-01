@@ -1,0 +1,31 @@
+@use '../../../../../scss/utils/mixins' as mixin;
+@use '../../../../../scss/utils/functions' as fn;
+
+.hero-bg{
+    background-image: url('../../../../../assets/backgroundImages/about-bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    // height: auto;
+    .responsive{
+        @include mixin.responsive;
+    }
+}
+
+@media(width > fn.rem(400)){
+    .hero-bg{
+        height: fn.rem(350);
+    }
+    }
+
+@media(width > fn.rem(700)){
+.hero-bg{
+    height: fn.rem(400);
+}
+}
+
+@media(width > fn.rem(1024)){
+    .hero-bg{
+        height: fn.rem(438);
+    }
+    }
