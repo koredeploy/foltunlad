@@ -1,11 +1,16 @@
 @use "../../../scss/global/colors" as color;
+@use "../../../scss/utils/mixins" as mixin;
 
 .globalcom-container {
   background-color: color.$green-200; /* Apply background color to this container */
+ 
+}
+.responsive{
+  @include mixin.responsive;
+}
+.globalcom {
+ 
+  margin: 0 auto; 
 }
 
-.globalcom {
-  max-width: 1100px; /* Limit the maximum width */
-  margin: 0 auto; /* Center the container horizontally */
-}
 

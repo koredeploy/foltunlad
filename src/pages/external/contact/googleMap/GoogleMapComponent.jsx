@@ -26,7 +26,7 @@ class GoogleMapComponent extends React.Component {
 
   render() {
     return (
-      <div style={{ width: "100%", height: "400px", }}>
+      <div className="w-full md:max-w-full h-[580px] lg:max-w-[650px]  py-0 lg:py-16" >
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyD4MTAl6UAFSx2gGCMRPwDy8UWsCbveIY8" }}
           defaultCenter={this.props.center}
