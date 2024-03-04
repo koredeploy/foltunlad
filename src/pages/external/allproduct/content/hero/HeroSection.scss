@@ -1,0 +1,38 @@
+@use '../../../../../scss/utils/mixins' as mixin;
+@use '../../../../../scss/utils/functions' as fn;
+
+.all-product-bg {
+    background: url("../../../../../assets/backgroundImages/all-product-bg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .responsive {
+        @include mixin.responsive
+    }
+}
+
+@media (width > fn.rem(300)) {
+    .all-product-bg{
+        height: fn.rem(300);
+    }
+}
+
+@media(width > fn.rem(400)){
+    .all-product-bg{
+        height: fn.rem(350);
+    }
+    }
+
+@media(width > fn.rem(700)){
+.all-product-bg{
+    height: fn.rem(400);
+}
+}
+
+@media(width > fn.rem(1024)){
+    .all-product-bg{
+        height: fn.rem(438);
+    }
+    }
+

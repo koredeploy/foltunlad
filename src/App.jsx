@@ -9,6 +9,7 @@ import RootLayout from "./layout/rootlayout/RootLayout";
 import HomePage from "./pages/external/home/HomePage";
 import ContactPage from "./pages/external/contact/ContactPage";
 import AboutPage from "./pages/external/about/AboutPage";
+import AllProduct from "./pages/external/allproduct/AllProduct";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
         <Route index path="/" element={<HomePage/>} />
         <Route path="/contact" element={<ContactPage/>}/>
         <Route path="/about" element={<AboutPage/>}/>
+        <Route path="/products" element={<AllProduct/>}/>
 
        
       </Route>

@@ -7,9 +7,11 @@ import search_icon from "../../assets/icons/search-icon.svg"
 import cart_icon from "../../assets/icons/cart-icon.svg"
 import { Link, useLocation } from "react-router-dom";
 import { Fade as Hamburger } from 'hamburger-react'
+import Search from "../search/Search";
 const Navbar = () => {
   const {pathname} = useLocation()
   const [show, setShow] = useState(false)
+  const [isSearch, setIsSearch] = useState(false)
   const [isOpen, setOpen] = useState(false);
 
   const handleHamburger = () => {
@@ -19,7 +21,7 @@ const Navbar = () => {
 
   
   return (
-    <div className="lg:h-[182px] lg:p-5 px-2 py-5 shadow-lg">
+    <div className="lg:h-[182px] bg-white-100 lg:p-5 px-2 py-5 shadow-lg">
       <header className="lg:block flex items-center justify-between gap-3" style={{maxWidth: "1440px", margin: "auto"}}>
         <div className="flex justify-between items-center lg:mt-4">
           <div className="flex items-center">
@@ -58,21 +60,22 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex gap-1 lg:translate-y-12 z-10 bg-white-100 justify-between lg:max-w-[1189px] lg:h-[83px] lg:mx-auto items-center lg:border-2 border-black-100 border-opacity-40 shadow-black-100 lg:shadow-md lg:p-5 lg:rounded-full">
-          <div><span><img src={search_icon} alt="" className="md:w-auto w-[35px] cursor-pointer" /></span></div>
+        <div className="flex gap-1 md:relative  lg:translate-y-12 z-10 bg-white-100 justify-between lg:max-w-[1189px] lg:h-[83px] lg:mx-auto items-center lg:border-2 border-black-100 border-opacity-40 shadow-black-100 lg:shadow-md lg:p-5 lg:rounded-full">
+          <div><span onClick={() => setIsSearch(!isSearch)}><img src={search_icon} alt="" className="md:w-auto w-[35px] cursor-pointer" /></span></div>
           <div className={`${show ? "block" : "lg:block hidden"} lg:relative absolute bg-white-200 lg:w-auto w-full lg:h-full h-screen top-0 left-0`}>
             <nav className="lg:block lg:p-2 p-7" onClick={handleHamburger}>
               <ul  className="flex lg:flex-row flex-col gap-12 text-xl items-center">
-                <li><Link className={pathname === "/" && "text-green-100"}>Home</Link></li>
-                <li><Link>About</Link></li>
-                <li><Link>Product</Link></li>
-                <li><Link>Contact</Link></li>
+                <li><Link to="/" className={pathname === "/" ? "text-green-100" : null}>Home</Link></li>
+                <li><Link to="/about" className={pathname === "/about" ? "text-green-100" : null}>About</Link></li>
+                <li><Link to="/products" className={pathname === "/products" ? "text-green-100" : null}>Product</Link></li>
+                <li><Link to="/contact" className={pathname === "/contact" ? "text-green-100" : null}>Contact</Link></li>
               </ul>
             </nav>
           </div>
           <div>
             <span><img src={cart_icon} alt="" className="md:w-auto w-[35px] cursor-pointer" /></span>
           </div>
+          {isSearch && <Search setIsSearch={setIsSearch}/>}
         </div>
       </header>
     </div>
