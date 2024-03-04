@@ -1,0 +1,14 @@
+@use "../../../../../scss/utils/functions" as fn;
+@use "../../../../../scss/utils/mixins" as mixin;
+
+.hero-section{
+  background-image: url("../../../../../assets/backgroundImages/hero-home-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: cover;
+  background-position: bottom;
+
+}
+.responsive {
+  @include mixin.responsive;
+}

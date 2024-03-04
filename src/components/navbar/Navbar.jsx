@@ -7,6 +7,7 @@ import search_icon from "../../assets/icons/search-icon.svg"
 import cart_icon from "../../assets/icons/cart-icon.svg"
 import { Link, useLocation } from "react-router-dom";
 import { Fade as Hamburger } from 'hamburger-react'
+import './Navbar.scss'
 const Navbar = () => {
   const {pathname} = useLocation()
   const [show, setShow] = useState(false)
@@ -19,9 +20,9 @@ const Navbar = () => {
 
   
   return (
-    <div className="lg:h-[182px] lg:p-5 px-2 py-5 shadow-lg">
+    <div className="navbar-container lg:p-5 px-2 py-5 shadow-lg">
       <header className="lg:block flex items-center justify-between gap-3" style={{maxWidth: "1440px", margin: "auto"}}>
-        <div className="flex justify-between items-center lg:mt-4">
+        <div className="flex justify-between items-center lg:mt-2">
           <div className="flex items-center">
             <div className="lg:hidden block z-50" onClick={() => setShow(!show)}>
             <Hamburger direction="right" size={32} toggled={isOpen} toggle={setOpen}/>
@@ -58,15 +59,15 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex gap-1 lg:translate-y-12 z-10 bg-white-100 justify-between lg:max-w-[1189px] lg:h-[83px] lg:mx-auto items-center lg:border-2 border-black-100 border-opacity-40 shadow-black-100 lg:shadow-md lg:p-5 lg:rounded-full">
+        <div className="flex gap-1 lg:translate-y-6 z-10 bg-white-100 justify-between lg:max-w-[1189px] lg:h-[83px] lg:mx-auto items-center lg:border-2 border-black-100 border-opacity-40 shadow-black-100 lg:shadow-md lg:p-5 lg:rounded-full">
           <div><span><img src={search_icon} alt="" className="md:w-auto w-[35px] cursor-pointer" /></span></div>
           <div className={`${show ? "block" : "lg:block hidden"} lg:relative absolute bg-white-200 lg:w-auto w-full lg:h-full h-screen top-0 left-0`}>
             <nav className="lg:block lg:p-2 p-7" onClick={handleHamburger}>
               <ul  className="flex lg:flex-row flex-col gap-12 text-xl items-center">
                 <li><Link className={pathname === "/" && "text-green-100"}>Home</Link></li>
-                <li><Link>About</Link></li>
-                <li><Link>Product</Link></li>
-                <li><Link>Contact</Link></li>
+                <li><Link to="/about" className={pathname === "/about" && "text-green-100"}>About</Link></li>
+                <li><Link to="/product" className={pathname === "/product" && "text-green-100"}>Product</Link></li>
+                <li><Link to="/contact" className={pathname === "/contact" && "text-green-100"}>Contact</Link></li>
               </ul>
             </nav>
           </div>

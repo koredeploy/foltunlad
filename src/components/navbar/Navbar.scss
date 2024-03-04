@@ -1,0 +1,10 @@
+@use "../../scss/utils/functions" as fn;
+.navbar-container{
+    height: fn.rem(155);
+}
+
+@media(width < fn.rem(700)){
+    .navbar-container{
+        height: fn.rem(90);
+    }
+}
