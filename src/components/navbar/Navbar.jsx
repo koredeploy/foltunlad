@@ -7,10 +7,11 @@ import search_icon from "../../assets/icons/search-icon.svg"
 import cart_icon from "../../assets/icons/cart-icon.svg"
 import { Link, useLocation } from "react-router-dom";
 import { Fade as Hamburger } from 'hamburger-react'
-import './Navbar.scss'
+import Search from "../search/Search";
 const Navbar = () => {
   const {pathname} = useLocation()
   const [show, setShow] = useState(false)
+  const [isSearch, setIsSearch] = useState(false)
   const [isOpen, setOpen] = useState(false);
 
   const handleHamburger = () => {
@@ -74,6 +75,7 @@ const Navbar = () => {
           <div>
             <span><img src={cart_icon} alt="" className="md:w-auto w-[35px] cursor-pointer" /></span>
           </div>
+          {isSearch && <Search setIsSearch={setIsSearch}/>}
         </div>
       </header>
     </div>
