@@ -107,7 +107,7 @@ const Footer = () => {
         <hr className="bg-gray-300 h-[2px]" />
         <p className="text-center text-gray-300 mt-3 text-sm">
           CopyRight &copy; {new Date().getFullYear()}{" "}
-          <span className="text-black-500 text-base font-semibold">Foltunlad</span>, All Rights Reserved
+          <span className="text-black-500 text-base">Foltunlad</span>, All Rights Reserved
         </p>
       </div>
     </div>
