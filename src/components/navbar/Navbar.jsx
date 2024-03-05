@@ -21,7 +21,7 @@ const Navbar = () => {
 
   
   return (
-    <div className="navbar-container lg:p-5 px-2 py-2 shadow-lg h-[145px]">
+    <div className="navbar-container lg:p-5 px-2 py-5 lg:pt-5 shadow-lg lg:h-[145px]">
       <header className="lg:block flex items-center justify-between gap-3" style={{maxWidth: "1440px", margin: "auto"}}>
         <div className="flex justify-between items-center lg:mt-2">
           <div className="flex items-center">
@@ -40,27 +40,26 @@ const Navbar = () => {
               <span className="h-full"><img src={mail_icon} alt="" className="h-full" /></span>
               <div>
                 <p className=" text-black-500 font-semibold text-[22px]">Email Address</p>
-                <p className=" text-gray-300 font-semibold small-text">foltunlad24@gmail.com</p>
+                <p className=" text-gray-300 font-medium small-text">foltunlad24@gmail.com</p>
               </div>
             </div>
             <div className="flex  items-center gap-2">
             <span><img src={phone_icon} alt="" /></span>
               <div>
                 <p className=" text-black-100 font-semibold text-[22px]">Phone Number</p>
-                <p className=" text-gray-300 font-semibold small-text" >(+234) 09047715613</p>
+                <p className=" text-gray-300 font-medium small-text" >(+234) 09047715613</p>
               </div>
             </div>
             <div className="flex  items-center gap-2">
             <span><img src={location_icon} alt="" /></span>
               <div>
                 <p className=" text-black-500 font-semibold text-[22px]">Our Location</p>
-                <p className=" text-gray-300 font-semibold small-text">Olupayi Rd, Apata, Ibadan</p>
+                <p className=" text-gray-300 font-medium small-text">Olupayi Rd, Apata, Ibadan</p>
               </div>
             </div>
           </div>
         </div>
-
-        <div className="flex gap-1 lg:translate-y-5 z-10 bg-white-100 justify-between lg:max-w-[1189px] lg:h-[83px] lg:mx-auto items-center lg:border-2 border-black-100 border-opacity-40 shadow-black-100 lg:shadow-md lg:p-5 lg:rounded-full">
+        <div className="flex gap-1 lg:translate-y-5 z-10 bg-white-100 justify-between lg:max-w-[1189px] lg:h-[83px] lg:mx-auto items-center shadow-black-100 lg:shadow-2xl lg:p-5 lg:rounded-full">
           <div><span><img src={search_icon} alt="" className="md:w-auto w-[35px] cursor-pointer" /></span></div>
           <div className={`${show ? "block" : "lg:block hidden"} lg:relative absolute bg-white-200 lg:w-auto w-full lg:h-full h-screen top-0 left-0`}>
             <nav className="lg:block lg:p-2 p-7" onClick={handleHamburger}>

@@ -64,7 +64,7 @@ span {
   font-weight: 500;
 }
 .big-text{
-  @include fluid-type($min_width, $max_width, 16px, 22px);
+  @include fluid-type($min_width, $max_width, 18px, 22px);
   font-weight: 400;
   color: colors.$black-100
 }

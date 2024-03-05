@@ -1,4 +1,5 @@
 import './CostmeticsAndToiletries.scss'
+import PropTypes from 'prop-types';
 
 import React from 'react'
 
@@ -20,7 +21,7 @@ const CosmeticsAndToiletries = ({products}) => {
             <p className="tiny-text text-left">{product.category}</p>
             <p>{product.productName}</p>
         </div>
-        <div className="my-2 max-w-[180px] max-h-[190px] md:max-w-[200px] md:max-h-[230px]">
+        <div className="my-2 max-w-[180px] min-h-[160px] max-h-[160px] md:max-w-[200px] md:max-h-[230px]">
             <img className="object-cover w-full h-full " src={product.image} alt="" />
         </div>
         <div className="bg-gray-300 w-full h-[0.5px] mx-auto "></div>
@@ -33,4 +34,9 @@ const CosmeticsAndToiletries = ({products}) => {
   )
 }
 
+CosmeticsAndToiletries.propTypes = {
+products: PropTypes.shape({
+    products: PropTypes.array.isRequired
+  }).isRequired
+};
 export default CosmeticsAndToiletries

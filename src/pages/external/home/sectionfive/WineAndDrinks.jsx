@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './WineAndDrinks.scss'
 
 const WineAndDrinks = ({products}) => {
@@ -15,7 +16,7 @@ const WineAndDrinks = ({products}) => {
             <p className="tiny-text text-left">{product.category}</p>
             <p>{product.productName}</p>
         </div>
-        <div className="my-2 max-w-[180px] max-h-[190px] md:max-w-[200px] md:max-h-[230px]">
+        <div className="my-2 max-w-[180px] max-h-[160px] md:max-w-[200px] md:max-h-[230px]">
             <img className="object-cover w-full h-full " src={product.image} alt="" />
         </div>
         <div className="bg-gray-300 w-full h-[0.5px] mx-auto "></div>
@@ -29,6 +30,11 @@ const WineAndDrinks = ({products}) => {
   )
 }
 
+WineAndDrinks.propTypes = {
+products: PropTypes.shape({
+      products: PropTypes.array.isRequired
+    }).isRequired
+  };
 export default WineAndDrinks
 
 

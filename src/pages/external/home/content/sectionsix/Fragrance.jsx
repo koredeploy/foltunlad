@@ -1,9 +1,10 @@
 import './Fragrace.scss'
+import PropTypes from 'prop-types';
 
 const Fragrance = ({products}) => {
   return (
     <div>
-        <div className='w-11-12 mx-auto responsive pb-14'>
+        <div className='w-11/12 mx-auto responsive pb-14'>
         <div className='flex items-baseline gap-3'>
             <h1 className='big-text'>Fragrance </h1>
             <h2 className='text-green-100 '>View All</h2>
@@ -15,7 +16,7 @@ const Fragrance = ({products}) => {
             <p className="tiny-text text-left">{product.category}</p>
             <p>{product.productName}</p>
         </div>
-        <div className="my-2 max-w-[180px] max-h-[190px] md:max-w-[200px] md:max-h-[230px]">
+        <div className="my-2 max-w-[180px] max-h-[160px] md:max-w-[200px] md:max-h-[230px]">
             <img className="object-cover w-full h-full " src={product.image} alt="" />
         </div>
         <div className="bg-gray-300 w-full h-[0.5px] mx-auto "></div>
@@ -28,4 +29,9 @@ const Fragrance = ({products}) => {
   )
 }
 
+Fragrance.propTypes = {
+products: PropTypes.shape({
+      products: PropTypes.array.isRequired
+    }).isRequired
+  };
 export default Fragrance
