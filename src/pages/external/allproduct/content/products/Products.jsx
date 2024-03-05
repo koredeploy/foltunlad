@@ -1,6 +1,8 @@
+// import dotenv from "dotenv"
 import { useEffect, useState } from "react";
 import "./Products.scss";
 import axios from "axios";
+// dotenv.config()
 
 // eslint-disable-next-line react/prop-types
 const Products = ({getFilter}) => {

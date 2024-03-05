@@ -20,7 +20,7 @@ const Search = ({setIsSearch}) => {
 
     
   return (
-    <div className="absolute z-40 bg-white-100  w-full mx-auto h-[404px] p-6 lg:top-[-2px] top-[72px] lg:left-0 right-[0px] rounded-none lg:rounded-3xl shadow-xl border-2 border-gray-300">
+    <div className="absolute z-40 bg-white-100 max-w-[1200px] w-full mx-auto h-[404px] p-6 lg:top-[-2px] top-[84px] lg:-left-[0px] right-[0px] rounded-none lg:rounded-3xl shadow-2xl border-2 border-gray-300">
         <div className="flex flex-col gap-7">
             <div>
                 <form className="flex gap-3 items-center relative" onSubmit={handleSearch}>

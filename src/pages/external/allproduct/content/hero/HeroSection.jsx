@@ -7,14 +7,8 @@ const HeroSection = ({isFilter}) => {
   const [filter, setFilter] = useState("")
 
   useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
-    const searchValue = searchParams.get("search");
-  if (searchValue) {
-    setFilter(searchValue);
-  }
-  else {
     setFilter(isFilter)
-  }
+  
   }, [isFilter])
   return (
     <div className='all-product-bg'>
