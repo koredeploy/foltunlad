@@ -3,7 +3,7 @@
 // MIN-WIDTH BREAKPOINTS : CULLED FROM BOOTSTRAP
 $breakpoints-up: (
   'xs': fn.em(0),
-  'sm': fn.em(576),
+  'sm': fn.em(375),
   'md': fn.em(768),
   'lg': fn.em(992),
   'lgII': fn.em(1024),
@@ -15,7 +15,7 @@ $breakpoints-up: (
 // MAX-WIDTH BREAKPOINTS : CULLED FROM BOOTSTRAP
 $breakpoints-down: (
   'xs': fn.em(575.98),
-  'sm': fn.em(767.98),
+  'sm': fn.em(375),
   'md': fn.em(991.98),
   'lg': fn.em(1199.98),
   'xl': fn.em(1399.98),

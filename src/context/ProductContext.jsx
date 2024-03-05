@@ -10,7 +10,7 @@ export const ProductProvider = ({ children }) => {
 
     const [latestProduct, setLatestProduct] = useState([]);
     const [provisions, setProvisions] = useState([])
-    const [costmeticsAndToiletries, setCostmeticsAndToiletries] = useState([])
+    const [cosmeticsAndToiletries, setCosmeticsAndToiletries] = useState([])
     const [wineAndDrinks, setWineAndDrinks] = useState([])
     const [fragrance, setFragrance] = useState([])
 
@@ -45,7 +45,7 @@ export const ProductProvider = ({ children }) => {
     const getCosmeticsAndToiletries = async () => {
         try {
             const res = await axios.get(`${baseUrl}/cosmeticsAndToiletries`);
-            setCostmeticsAndToiletries(res.data)
+            setCosmeticsAndToiletries(res.data)
             
         } catch (error) {
             console.log(error);
@@ -72,7 +72,7 @@ export const ProductProvider = ({ children }) => {
         latestProduct,
         provisions,
         wineAndDrinks,
-        costmeticsAndToiletries,
+        cosmeticsAndToiletries,
         fragrance,
     };
 

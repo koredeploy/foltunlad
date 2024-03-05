@@ -1,0 +1,12 @@
+@use "../../../../../scss/utils/mixins"as mixin;
+@use "../../../../../scss/utils/functions" as fn;
+
+.responsive{
+    @include mixin.responsive;
+}
+
+@media(width < 375px){
+    .small-screen{
+        width: 140px;
+    }
+}

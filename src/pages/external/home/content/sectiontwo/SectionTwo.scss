@@ -1,0 +1,23 @@
+@use '../../../../../scss/utils/mixins' as mixin;
+
+.responsive{
+    @include mixin.responsive;
+}
+.best-seller-bg-one{
+    background-image: url("../../../../../assets/backgroundImages/best-seller-01.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    object-fit: cover;
+}
+.best-seller-bg-two{
+    background-image: url("../../../../../assets/backgroundImages/best-seller-02.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    object-fit: cover;
+}
+.best-seller-bg-three{
+    background-image: url("../../../../../assets/backgroundImages/best-seller-03.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    object-fit: cover;
+}

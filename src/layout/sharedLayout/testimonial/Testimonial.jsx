@@ -9,6 +9,7 @@ const Testimonial = () => {
   const { slideContent } = Content
 
   return (
+<div className='bg-[#EEF8FD]'>
 <div className='w-11/12 mx-auto responsive'>
 
 <Swiper
@@ -39,6 +40,7 @@ const Testimonial = () => {
         </SwiperSlide>
       ))}
         </Swiper>
+</div>
 </div>
   )
 }

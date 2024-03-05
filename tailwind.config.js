@@ -45,7 +45,7 @@ export default {
       // },
       //breakpoints
       screenSize: {
-          sm: "480px",
+          sm: "375px",
           md: "768px",
           lg: "976px",
           xl: "1440px",
