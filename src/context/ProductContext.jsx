@@ -5,68 +5,42 @@ const ProductContext = createContext();
 
 export default ProductContext;
 
+// eslint-disable-next-line react/prop-types
 export const ProductProvider = ({ children }) => {
-    const baseUrl = import.meta.env.VITE_REACT_APP_API_URL;
+    const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+    console.log(apiUrl);
 
     const [latestProduct, setLatestProduct] = useState([]);
-    const [provisions, setProvisions] = useState([])
-    const [cosmeticsAndToiletries, setCosmeticsAndToiletries] = useState([])
-    const [wineAndDrinks, setWineAndDrinks] = useState([])
-    const [fragrance, setFragrance] = useState([])
+    const [provisions, setProvisions] = useState([]);
+    const [cosmeticsAndToiletries, setCosmeticsAndToiletries] = useState([]);
+    const [wineAndDrinks, setWineAndDrinks] = useState([]);
+    const [fragrance, setFragrance] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getLatestProduct();
-        getProvisions();
-        getCosmeticsAndToiletries();
-        getFragrance()
-        getWineAndDrinks()
-    }, []); // Empty dependency array ensures the effect runs only once on component mount
+        const fetchData = async () => {
+            try {
+                const [latestRes, provisionsRes, cosmeticsAndToiletriesRes, wineAndDrinksRes, fragranceRes] = await Promise.all([
+                    axios.get(`${apiUrl}/latest`),
+                    axios.get(`${apiUrl}/provisions`),
+                    axios.get(`${apiUrl}/cosmeticsAndToiletries`),
+                    axios.get(`${apiUrl}/winesAndDrinks`),
+                    axios.get(`${apiUrl}/fragrance`)
+                ]);
+                setLatestProduct(latestRes.data);
+                setProvisions(provisionsRes.data);
+                setCosmeticsAndToiletries(cosmeticsAndToiletriesRes.data);
+                setWineAndDrinks(wineAndDrinksRes.data);
+                setFragrance(fragranceRes.data);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                setLoading(false);
+            }
+        };
 
-    const getLatestProduct = async () => {
-        try {
-            const res = await axios.get(`${baseUrl}/latest`);
-            setLatestProduct(res.data);
-            
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    const getProvisions = async () => {
-        try {
-            const res = await axios.get(`${baseUrl}/provisions`);
-            setProvisions(res.data)
-            
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    const getCosmeticsAndToiletries = async () => {
-        try {
-            const res = await axios.get(`${baseUrl}/cosmeticsAndToiletries`);
-            setCosmeticsAndToiletries(res.data)
-            
-        } catch (error) {
-            console.log(error);
-        }
-    };
-    const getWineAndDrinks = async () => {
-        try {
-            const res = await axios.get(`${baseUrl}/winesAndDrinks`);
-            setWineAndDrinks(res.data)
-        } catch (error) {
-            console.log(error);
-        }
-    };
-    const getFragrance = async () => {
-        try {
-            const res = await axios.get(`${baseUrl}/fragrance`);
-            setFragrance(res.data)
-        } catch (error) {
-            console.log(error);
-        }
-    };
+        fetchData();
+    }, [apiUrl]); 
 
     const ProductData = {
         latestProduct,
@@ -74,7 +48,10 @@ export const ProductProvider = ({ children }) => {
         wineAndDrinks,
         cosmeticsAndToiletries,
         fragrance,
+        loading
     };
+    console.log(latestProduct);
+    console.log(provisions);
 
     return (
         <ProductContext.Provider value={ProductData}>

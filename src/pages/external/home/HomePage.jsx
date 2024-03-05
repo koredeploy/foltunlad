@@ -9,6 +9,7 @@ import Provisions from "./content/sectionthree/Provisions";
 import CosmeticsAndToiletries from "./content/sectionfour/CosmeticsAndToiletries";
 import WineAndDrinks from "./sectionfive/WineAndDrinks";
 import Fragrance from "./content/sectionsix/Fragrance";
+import Products from "../allproduct/content/products/Products";
 const HomePage = () => {
   const {
     latestProduct,
@@ -17,16 +18,15 @@ const HomePage = () => {
     wineAndDrinks,
     cosmeticsAndToiletries,
   } = useContext(ProductContext);
-
+   
+  console.log(provisions);
   // console.log(cosmeticsAndToiletries);
   
 
   return (
     <div className="bg-white-200">
       <HeroSection />
-      <LatestProducts
-        latestProduct={latestProduct}
-      />
+      <LatestProducts latestProduct={latestProduct}/>
       <SectionTwo/>
       <Provisions provisions={provisions}/>
       <CosmeticsAndToiletries products={cosmeticsAndToiletries}/>
