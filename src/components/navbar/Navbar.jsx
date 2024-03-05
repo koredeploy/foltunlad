@@ -60,14 +60,14 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex gap-1 md:relative  lg:translate-y-12 z-10 bg-white-100 justify-between lg:max-w-[1189px] lg:h-[83px] lg:mx-auto items-center lg:border-2 border-black-100 border-opacity-40 shadow-black-100 lg:shadow-md lg:p-5 lg:rounded-full">
+        <div className="flex gap-1 lg:relative  lg:translate-y-12 z-10 bg-white-100 justify-between lg:max-w-[1189px] lg:h-[83px] lg:mx-auto items-center lg:border-2 border-black-100 border-opacity-40 shadow-black-100 lg:shadow-md lg:p-5 lg:rounded-full">
           <div><span onClick={() => setIsSearch(!isSearch)}><img src={search_icon} alt="" className="md:w-auto w-[35px] cursor-pointer" /></span></div>
-          <div className={`${show ? "block" : "lg:block hidden"} lg:relative absolute bg-white-200 lg:w-auto w-full lg:h-full h-screen top-0 left-0`}>
+          <div className={`${show ? "block" : "lg:block hidden"} lg:relative absolute bg-white-200 lg:w-auto w-full lg:h-full lg:z-20 z-50  h-screen top-0 left-0`}>
             <nav className="lg:block lg:p-2 p-7" onClick={handleHamburger}>
               <ul  className="flex lg:flex-row flex-col gap-12 text-xl items-center">
                 <li><Link to="/" className={pathname === "/" ? "text-green-100" : null}>Home</Link></li>
                 <li><Link to="/about" className={pathname === "/about" ? "text-green-100" : null}>About</Link></li>
-                <li><Link to="/products" className={pathname === "/products" ? "text-green-100" : null}>Product</Link></li>
+                <li><Link to="/products" className={pathname.includes("/products") ? "text-green-100" : null}>Product</Link></li>
                 <li><Link to="/contact" className={pathname === "/contact" ? "text-green-100" : null}>Contact</Link></li>
               </ul>
             </nav>
