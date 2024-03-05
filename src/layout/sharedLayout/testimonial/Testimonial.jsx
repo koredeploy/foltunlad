@@ -4,23 +4,18 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import quote from '../../../assets/icons/Group.svg'
-// import profileImage from '../../../assets/images/profile-img.png'
 import "./style/Testimonial.scss"
 const Testimonial = () => {
   const { slideContent } = Content
 
-  console.log(slideContent);
-  const { profileImg } = slideContent
-
-console.log(profileImg);
   return (
 <div className='w-11/12 mx-auto responsive'>
 
 <Swiper
           spaceBetween={50}
           slidesPerView={1}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
+          // onSlideChange={() => console.log('slide change')}
+          // onSwiper={(swiper) => console.log(swiper)}
 
           autoplay={{
             delay: 4000,

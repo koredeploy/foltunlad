@@ -67,7 +67,7 @@ const Navbar = () => {
               <ul  className="flex lg:flex-row flex-col gap-12 text-xl items-center">
                 <li><Link className={pathname === "/" && "text-green-100"}>Home</Link></li>
                 <li><Link to="/about" className={pathname === "/about" && "text-green-100"}>About</Link></li>
-                <li><Link to="/product" className={pathname === "/product" && "text-green-100"}>Product</Link></li>
+                <li><Link to="/products" className={pathname === "/product" && "text-green-100"}>Product</Link></li>
                 <li><Link to="/contact" className={pathname === "/contact" && "text-green-100"}>Contact</Link></li>
               </ul>
             </nav>
