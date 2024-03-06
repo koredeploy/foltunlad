@@ -8,8 +8,8 @@ const LatestProducts = ({
   latestProduct,
 }) => {
   // eslint-disable-next-line react/prop-types
-  const { latestProducts } = latestProduct;
-  console.log(latestProducts);
+  // const { latestProducts } = latestProduct;
+  // console.log(latestProduct);
   return (
     <div>
       <div className="w-11/12 mx-auto responsive pt-2 pb-14">
@@ -21,7 +21,7 @@ const LatestProducts = ({
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10 py-5">
-          {latestProducts?.map((product) => (
+          {latestProduct?.map((product) => (
             <div
               key={product._id}
               className=" small-screen flex flex-col border border-gray-300 rounded-lg p-4 items-center justify-between h-[275px] md:h-[360px] xl:h-[400px] "

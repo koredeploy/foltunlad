@@ -5,7 +5,7 @@ import React from 'react'
 
 // eslint-disable-next-line react/prop-types
 const CosmeticsAndToiletries = ({products}) => {
-  console.log(products);
+  // console.log(products);
   return (
     
        <div>

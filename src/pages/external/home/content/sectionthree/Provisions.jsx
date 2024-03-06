@@ -3,7 +3,7 @@ import './Provisions.scss'
 
 // eslint-disable-next-line react/prop-types
 const Provisions = ({provisions}) => {
-    console.log(provisions);
+    // console.log(provisions);
   return (
     <div>
         <div className='w-11/12 mx-auto responsive py-14'>
