@@ -4,7 +4,6 @@ import {
   createBrowserRouter,
   createRoutesFromElements  
 } from "react-router-dom";
-
 import RootLayout from "./layout/rootlayout/RootLayout";
 import HomePage from "./pages/external/home/HomePage";
 import ContactPage from "./pages/external/contact/ContactPage";

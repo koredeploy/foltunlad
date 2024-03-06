@@ -1,4 +1,3 @@
-
 import logo from "../../assets/images/logo.svg";
 import mail_icon from "../../assets/icons/mail-icon.svg";
 import phone_icon from "../../assets/icons/phone-icon.svg";
@@ -10,12 +9,14 @@ import facebook from "../../assets/icons/footer-facebook-icon.svg";
 
 import { Link } from "react-router-dom";
 
-
 const Footer = () => {
   return (
     <div className="bg-white-200">
-      <div className="py-10 px-4" style={{ maxWidth: "1440px", margin: "auto" }}>
-        <div className="grid lg:grid-cols-3 grid-cols-1 pt-6 pb-7 gap-8 w-11/12 mx-auto">
+      <div
+        className="py-10 px-4 w-11/12 mx-auto"
+        style={{ maxWidth: "1440px", margin: "auto" }}
+      >
+        <div className="grid lg:grid-cols-3 grid-cols-1 pt-6 pb-7 gap-8 ">
           <div className="flex flex-col gap-5 items-center lg:items-start">
             <Link to="/">
               <img className=" w-48 md:w-auto" src={logo} alt="" />
@@ -38,19 +39,19 @@ const Footer = () => {
               <h2 className="font-medium text-2xl">Quick Links</h2>
               <ul className="flex list-disc text-lg flex-col gap-7 justify-center items-start">
                 <li>
-                  <Link>About</Link>
+                  <Link to="/about">About</Link>
                 </li>
                 <li>
-                  <Link>Products</Link>
+                  <Link to="/products">Products</Link>
                 </li>
                 <li>
-                  <Link>Search</Link>
+                  <Link to="/">Search</Link>
                 </li>
                 <li>
-                  <Link>Carts</Link>
+                  <Link to="">Carts</Link>
                 </li>
                 <li>
-                  <Link>Contact</Link>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
@@ -61,15 +62,19 @@ const Footer = () => {
                 <h2 className="font-medium text-2xl">Contact Us</h2>
 
                 <div className="flex  items-center gap-2">
-                  
-                    <img src={location_icon} alt="" className="w-[25px] h-[32px]" />
-                 
+                  <img
+                    src={location_icon}
+                    alt=""
+                    className="w-[25px] h-[32px]"
+                  />
+
                   <div>
-                    <p className=" text-black-500 font-semibold text-[22px]">
+                    <h2 className=" text-black-500   text-[22px]">
                       Our Location
-                    </p>
-                    <p className=" text-gray-300 font-semibold text-base">
-                    1, Olupayi Rd, Behind Kurotola Petrol Station, Bembo Road, Apata, Ibadan
+                    </h2>
+                    <p className=" text-gray-300 font-medium  text-base">
+                      1, Olupayi Rd, Behind Kurotola Petrol Station, Bembo Road,
+                      Apata, Ibadan
                     </p>
                   </div>
                 </div>
@@ -78,10 +83,10 @@ const Footer = () => {
                     <img src={mail_icon} alt="" className="h-full" />
                   </span>
                   <div>
-                    <p className=" text-black-500 font-semibold text-[22px]">
+                    <h2 className=" text-black-500  text-[22px]">
                       Email Address
-                    </p>
-                    <p className=" text-gray-300  font-semibold text-base">
+                    </h2>
+                    <p className=" text-gray-300 font-medium  text-base">
                       foltunlad24@gmail.com
                     </p>
                   </div>
@@ -91,15 +96,14 @@ const Footer = () => {
                     <img src={phone_icon} alt="" />
                   </span>
                   <div>
-                    <p className=" text-black-500 font-semibold text-[22px]">
+                    <h2 className=" text-black-500 text-[22px]">
                       Phone Number
-                    </p>
-                    <p className=" text-gray-300  font-semibold text-base">
+                    </h2>
+                    <p className=" text-gray-300 font-medium  text-base">
                       (+234) 09047715613
                     </p>
                   </div>
                 </div>
-                
               </div>
             </div>
           </div>
@@ -107,7 +111,8 @@ const Footer = () => {
         <hr className="bg-gray-300 h-[2px]" />
         <p className="text-center text-gray-300 mt-3 text-sm">
           CopyRight &copy; {new Date().getFullYear()}{" "}
-          <span className="text-black-500 text-base">Foltunlad</span>, All Rights Reserved
+          <span className="text-black-500 text-base">Foltunlad</span>, All
+          Rights Reserved
         </p>
       </div>
     </div>

@@ -5,7 +5,7 @@ import axios from "axios";
 // dotenv.config()
 
 // eslint-disable-next-line react/prop-types
-const Products = ({getFilter}) => {
+const Products = ({ getFilter }) => {
   const [latestProducts, setLatestProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
@@ -15,9 +15,6 @@ const Products = ({getFilter}) => {
   const [drinks, setDrinks] = useState([]);
   const [filter, setFilter] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
-  
-
-
 
   const itemsPerPage = 12;
 
@@ -40,6 +37,7 @@ const Products = ({getFilter}) => {
   }
 
   const URL = "https://foltunlad-backend.onrender.com/api/fol";
+  
   const getAllProducts = async () => {
     const { data } = await axios(URL);
     setProducts(data.data);
@@ -69,9 +67,9 @@ const Products = ({getFilter}) => {
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const searchValue = searchParams.get("search");
-  if (searchValue) {
-    setFilter(searchValue);
-  } 
+    if (searchValue) {
+      setFilter(searchValue);
+    }
     getAllProducts();
     getLatestProducts();
     getProvisionProducts();
@@ -93,62 +91,71 @@ const Products = ({getFilter}) => {
       setProducts(allProducts);
     }
     setCurrentPage(1);
-    getFilter(filter) 
-  }, [filter, allProducts, provisions, cosmetics, drinks, fragrance, getFilter]);
-
-  
-  
+    getFilter(filter);
+  }, [
+    filter,
+    allProducts,
+    provisions,
+    cosmetics,
+    drinks,
+    fragrance,
+    getFilter,
+  ]);
 
   return (
     <div className="py-24">
       <div
-        className="flex gap-16 md:pl-24 px-4"
+        className="flex gap-14   w-11/12 mx-auto"
         style={{ maxWidth: "1400px", margin: "auto" }}
       >
         <div className="space-y-5 w-[277px] lg:block hidden">
-          <div>
+          <div className="w-full">
             <h2 className=" text-4xl">Category</h2>
             <div className="w-full space-y-5 py-5">
-              
-                <button
-                  className={`${filter === "All" && "text-green-100"} flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
-                  onClick={() => setFilter("All")}
-                >
-                  All <span>{allProducts?.length}</span>
-                </button>
-              
-              
-                <button
-                  className={`${filter === "Provisions" && "text-green-100"} flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
-                  onClick={() => setFilter("Provisions")}
-                >
-                  Provision <span>{provisions?.length}</span>
-                </button>
-             
-              
-                <button
-                  className={`${filter === "Cosmetics" && "text-green-100"} flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
-                  onClick={() => setFilter("Cosmetics")}
-                >
-                  Cosmetics & Toiletries <span>{cosmetics?.length}</span>
-                </button>
-              
-              
-                <button
-                  className={`${filter === "Wines" && "text-green-100"} flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
-                  onClick={() => setFilter("Wines")}
-                >
-                  Wine & Drinks <span>{drinks?.length}</span>
-                </button>
-              
-              
-                <button
-                  className={`${filter === "Fragrances" && "text-green-100"} flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
-                  onClick={() => setFilter("Fragrances")}
-                >
-                  Fragrances <span>{fragrance?.length}</span>
-                </button>
-              
+              <button
+                className={`${
+                  filter === "All" && "text-green-100"
+                } flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
+                onClick={() => setFilter("All")}
+              >
+                All <span>{allProducts?.length}</span>
+              </button>
+
+              <button
+                className={`${
+                  filter === "Provisions" && "text-green-100"
+                } flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
+                onClick={() => setFilter("Provisions")}
+              >
+                Provision <span>{provisions?.length}</span>
+              </button>
+
+              <button
+                className={`${
+                  filter === "Cosmetics" && "text-green-100"
+                } flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
+                onClick={() => setFilter("Cosmetics")}
+              >
+                Cosmetics & Toiletries <span>{cosmetics?.length}</span>
+              </button>
+
+              <button
+                className={`${
+                  filter === "Wines" && "text-green-100"
+                } flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
+                onClick={() => setFilter("Wines")}
+              >
+                Wine & Drinks <span>{drinks?.length}</span>
+              </button>
+
+              <button
+                className={`${
+                  filter === "Fragrances" && "text-green-100"
+                } flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
+                onClick={() => setFilter("Fragrances")}
+              >
+                Fragrances <span>{fragrance?.length}</span>
+              </button>
             </div>
           </div>
           <div>
@@ -183,29 +190,31 @@ const Products = ({getFilter}) => {
           </div>
         </div>
 
-        <div className=" max-w-[877px]">
-          <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-6 gap-x-3">
+        <div className="w-11/12 mx-auto ">
+          <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
             {currentItems?.map((product) => {
               const { _id, productName, amount, category, image } = product;
 
               return (
                 <div
                   key={_id}
-                  className=" md:w-[282px] sm:w-[200px] w-full  flex flex-col p-5 gap-2 justify-center items-center h-[440px] border-2 border-gray-400 rounded-lg"
+                  className="flex flex-col border border-gray-300 rounded-lg p-4 items-center justify-between h-[355px] md:h-[360px] xl:h-[400px] lg:max-w-[280px] xl:max-w-[350px]"
                 >
                   <p className="self-start font-semibold text-sm text-gray-300">
                     {category}
                   </p>
                   <p className="self-start text-lg">{productName}</p>
-                  <div className=" h-64">
-                    <img
-                      src={image[0]}
-                      alt=""
-                      className="md:max-w-[241px] w-full h-full object-cover"
-                    />
+                  <div className=" h-60 flex justify-center items-center">
+                    <div className="my-2 max-w-[180px] max-h-[160px] min-h-[160px] min-w-[160px]  md:max-w-[200px] md:max-h-[230px] lg:max-w-[210px] ">
+                      <img
+                        className="object-cover w-full h-48 "
+                        src={image[0]}
+                        alt=""
+                      />
+                    </div>
                   </div>
-                  <div className="h-[1.5px] bg-gray-400 w-full mx-auto"></div>
-                  <p className="mt-3 text-center text-green-100 text-[34px] font-bold">
+                  <div className="h-[0.5px] bg-gray-300 w-full mx-auto"></div>
+                  <p className="mt-3 text-center text-green-100 big-text font-bold">
                     #{amount}
                   </p>
                 </div>
