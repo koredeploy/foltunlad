@@ -8,7 +8,7 @@ export default ProductContext;
 // eslint-disable-next-line react/prop-types
 export const ProductProvider = ({ children }) => {
     const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
-    console.log(apiUrl);
+    // console.log(apiUrl);
 
     const [latestProduct, setLatestProduct] = useState([]);
     const [provisions, setProvisions] = useState([]);
@@ -16,6 +16,9 @@ export const ProductProvider = ({ children }) => {
     const [wineAndDrinks, setWineAndDrinks] = useState([]);
     const [fragrance, setFragrance] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [open, setOpen] = useState(false)
+
+    console.log(open);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -48,10 +51,12 @@ export const ProductProvider = ({ children }) => {
         wineAndDrinks,
         cosmeticsAndToiletries,
         fragrance,
-        loading
+        loading,
+        open,
+        setOpen,
     };
-    console.log(latestProduct);
-    console.log(provisions);
+    // console.log(latestProduct);
+    // console.log(provisions);
 
     return (
         <ProductContext.Provider value={ProductData}>

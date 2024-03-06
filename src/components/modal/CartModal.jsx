@@ -1,12 +1,15 @@
-import { Fragment, useRef, useState } from 'react'
+import { Fragment, useRef, useState, useContext } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import ProductContext from '../../context/ProductContext'
+import comingSoon from '../../assets/backgroundImages/coming-soon.svg'
+import {Link} from 'react-router-dom'
 // import success from '../../assets/success.png'
 // import closeModal from '../../assets/closeModal.png'
 
 // eslint-disable-next-line react/prop-types
-const CartDialog = ({open, setOpen}) => {
+const CartDialog = () => {
+    const {open, setOpen} = useContext(ProductContext)
     
-
     const cancelButtonRef = useRef(null)
 
   return (
@@ -14,7 +17,7 @@ const CartDialog = ({open, setOpen}) => {
         <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-10"
+        className="relative z-50"
         initialFocus={cancelButtonRef}
         onClose={setOpen}
       >
@@ -44,16 +47,14 @@ const CartDialog = ({open, setOpen}) => {
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white-100 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                 
                 <div className="bg-white px-4 py-6 sm:p-6 sm:pb-4 flex flex-col justify-center text-center gap-5 items-center ">
-                    {/* <img onClick={()=>{
-                        setOpen(false)
-                    }} src={closeModal} alt="" className=' absolute top-3 right-4' />
-                  <img src={success} className='w-1/3 pt-3' alt="" /> */}
-                  <h1 className="text-2xl font-bold">
-                  Sent Successfully
+
+                 <img src={comingSoon} alt="" />
+                  <h1 className=" pb-3 text-center text-3xl">
+                  Cart is unavailable. We will be able to take <span className='text-3xl text-red-200'>online orders</span> soon.
                   </h1>
-                  <p className=" pb-10 ">
-                  Your request has been sent successfully! We will be in touch with you shortly to address your needs and provide top-notch service.
-                  </p>
+                  <button onClick={()=>{
+                    setOpen(false)
+                  }} className='p-3 text-green-100 rounded-3xl border border-green-100 w-40 mb-2' > Go Back </button>
                  
                   
                 </div>

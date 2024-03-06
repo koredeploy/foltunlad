@@ -7,9 +7,8 @@ import ProductContext from "../../../context/ProductContext";
 import SectionTwo from "./content/sectiontwo/SectionTwo";
 import Provisions from "./content/sectionthree/Provisions";
 import CosmeticsAndToiletries from "./content/sectionfour/CosmeticsAndToiletries";
-import WineAndDrinks from "./sectionfive/WineAndDrinks";
+import WineAndDrinks from "./content/sectionfive/WineAndDrinks";
 import Fragrance from "./content/sectionsix/Fragrance";
-import Products from "../allproduct/content/products/Products";
 const HomePage = () => {
   const {
     latestProduct,
@@ -19,8 +18,7 @@ const HomePage = () => {
     cosmeticsAndToiletries,
   } = useContext(ProductContext);
    
-  console.log(provisions);
-  // console.log(cosmeticsAndToiletries);
+
   
 
   return (

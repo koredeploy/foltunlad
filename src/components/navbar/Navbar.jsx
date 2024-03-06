@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import logo from "../../assets/images/logo.svg";
 import mail_icon from "../../assets/icons/mail-icon.svg"
 import phone_icon from "../../assets/icons/phone-icon.svg"
@@ -8,25 +8,31 @@ import cart_icon from "../../assets/icons/cart-icon.svg"
 import { Link, useLocation } from "react-router-dom";
 import { Fade as Hamburger } from 'hamburger-react'
 import Search from "../search/Search";
+import ProductContext from "../../context/ProductContext";
+import CartDialog from "../modal/CartModal";
 const Navbar = () => {
   const {pathname} = useLocation()
   const [show, setShow] = useState(false)
   const [isSearch, setIsSearch] = useState(false)
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const {setOpen} = useContext(ProductContext);
+
+  // console.log(open);
   const handleHamburger = () => {
     setShow(false)
-    setOpen(false)
+    setIsOpen(false)
   }
 
   
   return (
+    <div>
     <div className="navbar-container lg:p-5 px-2 py-5 lg:pt-5 shadow-lg lg:h-[145px]">
       <header className="lg:block flex items-center justify-between gap-3 w-11/12 mx-auto" style={{maxWidth: "1440px", margin: "auto"}}>
         <div className="flex justify-between items-center lg:mt-2">
           <div className="flex items-center">
             <div className="lg:hidden block z-50" onClick={() => setShow(!show)}>
-            <Hamburger direction="right" size={32} toggled={isOpen} toggle={setOpen}/>
+            <Hamburger direction="right" size={32} toggled={isOpen} toggle={setIsOpen}/>
             </div>
             <span>
               <Link to="/">
@@ -73,11 +79,15 @@ const Navbar = () => {
             </nav>
           </div>
           <div>
-            <span><img src={cart_icon} alt="" className="md:w-auto w-[35px] cursor-pointer" /></span>
+            <span onClick={()=>{
+              setOpen(true)
+            }}><img  src={cart_icon} alt="" className="md:w-auto w-[35px] cursor-pointer" /></span>
           </div>
           {isSearch && <Search setIsSearch={setIsSearch}/>}
         </div>
       </header>
+    </div>
+    <CartDialog />
     </div>
   );
 };

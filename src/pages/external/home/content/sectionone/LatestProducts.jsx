@@ -49,9 +49,16 @@ const LatestProducts = ({
   );
 };
 
+// LatestProducts.propTypes = {
+//   latestProduct: PropTypes.shape({
+//     latestProducts: PropTypes.array.isRequired,
+//   }).isRequired,
+// };
+
 LatestProducts.propTypes = {
   latestProduct: PropTypes.shape({
     latestProducts: PropTypes.array.isRequired,
-  }).isRequired,
+  }),
 };
+
 export default LatestProducts;
