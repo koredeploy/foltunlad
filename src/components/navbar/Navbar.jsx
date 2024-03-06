@@ -26,7 +26,7 @@ const Navbar = () => {
 
   
   return (
-    <div>
+    <div className="fixed bg-white-100 top-0 right-0 left-0 z-50">
     <div className="navbar-container lg:p-5 px-2 py-5 lg:pt-5 shadow-lg lg:h-[145px]">
       <header className="lg:block flex items-center justify-between gap-3 w-11/12 mx-auto" style={{maxWidth: "1440px", margin: "auto"}}>
         <div className="flex justify-between items-center lg:mt-2">
