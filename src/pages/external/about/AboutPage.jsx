@@ -8,7 +8,7 @@ import SectionTwo from './content/sectiontwo/SectionTwo'
 const AboutPage = () => {
   return (
     <div>
-        <div >
+        <div className='pt-[5.5rem]' >
         <HeroSection/>
         <SectionOne/>
         <SectionTwo/>
