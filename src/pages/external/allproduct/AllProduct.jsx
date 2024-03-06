@@ -8,7 +8,7 @@ const AllProduct = () => {
     setIsFilter(filter)
   }
   return (
-    <div>
+    <div className='pt-[5.5rem]'>
         <HeroSection isFilter={isFilter}/>
         <Products getFilter={handleFilter} />
     </div>

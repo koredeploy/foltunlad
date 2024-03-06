@@ -1,18 +1,19 @@
-// import dotenv from "dotenv"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import "./Products.scss";
-import axios from "axios";
-// dotenv.config()
+import ProductContext from "../../../../../context/ProductContext";
 
 // eslint-disable-next-line react/prop-types
 const Products = ({ getFilter }) => {
-  const [latestProducts, setLatestProducts] = useState([]);
+  const {
+    allProducts,
+    latestProduct,
+    provisions,
+    fragrance,
+    wineAndDrinks,
+    cosmeticsAndToiletries,
+  } = useContext(ProductContext);
+  
   const [products, setProducts] = useState([]);
-  const [allProducts, setAllProducts] = useState([]);
-  const [fragrance, setFragrance] = useState([]);
-  const [provisions, setProvisions] = useState([]);
-  const [cosmetics, setCosmetics] = useState([]);
-  const [drinks, setDrinks] = useState([]);
   const [filter, setFilter] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -36,55 +37,21 @@ const Products = ({ getFilter }) => {
     setCurrentPage(pageNumber);
   }
 
-  const URL = "https://foltunlad-backend.onrender.com/api/fol";
-  
-  const getAllProducts = async () => {
-    const { data } = await axios(URL);
-    setProducts(data.data);
-    setAllProducts(data.data);
-  };
-  const getLatestProducts = async () => {
-    const { data } = await axios(`${URL}/latest`);
-    setLatestProducts(data.latestProducts);
-  };
-  const getProvisionProducts = async () => {
-    const { data } = await axios(`${URL}/provisions`);
-    setProvisions(data);
-  };
-  const getFragranceProducts = async () => {
-    const { data } = await axios(`${URL}/fragrance`);
-    setFragrance(data);
-  };
-  const getDrinkProducts = async () => {
-    const { data } = await axios(`${URL}/winesAndDrinks`);
-    setDrinks(data);
-  };
-  const getCosmeticsProducts = async () => {
-    const { data } = await axios(`${URL}/cosmeticsAndToiletries`);
-    setCosmetics(data);
-  };
-
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const searchValue = searchParams.get("search");
     if (searchValue) {
       setFilter(searchValue);
     }
-    getAllProducts();
-    getLatestProducts();
-    getProvisionProducts();
-    getFragranceProducts();
-    getCosmeticsProducts();
-    getDrinkProducts();
   }, []);
 
   useEffect(() => {
     if (filter === "Provisions") {
       setProducts(provisions);
     } else if (filter === "Cosmetics") {
-      setProducts(cosmetics);
+      setProducts(cosmeticsAndToiletries);
     } else if (filter === "Wines") {
-      setProducts(drinks);
+      setProducts(wineAndDrinks);
     } else if (filter === "Fragrances") {
       setProducts(fragrance);
     } else {
@@ -96,8 +63,8 @@ const Products = ({ getFilter }) => {
     filter,
     allProducts,
     provisions,
-    cosmetics,
-    drinks,
+    cosmeticsAndToiletries,
+    wineAndDrinks,
     fragrance,
     getFilter,
   ]);
@@ -136,7 +103,8 @@ const Products = ({ getFilter }) => {
                 } flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
                 onClick={() => setFilter("Cosmetics")}
               >
-                Cosmetics & Toiletries <span>{cosmetics?.length}</span>
+                Cosmetics & Toiletries{" "}
+                <span>{cosmeticsAndToiletries?.length}</span>
               </button>
 
               <button
@@ -145,7 +113,7 @@ const Products = ({ getFilter }) => {
                 } flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
                 onClick={() => setFilter("Wines")}
               >
-                Wine & Drinks <span>{drinks?.length}</span>
+                Wine & Drinks <span>{wineAndDrinks?.length}</span>
               </button>
 
               <button
@@ -162,7 +130,7 @@ const Products = ({ getFilter }) => {
             <h2 className="text-4xl">Best Sellers</h2>
 
             <div className=" space-y-4 py-5">
-              {latestProducts?.map((product) => {
+              {latestProduct?.map((product) => {
                 return (
                   <div key={product._id} className="flex items-center gap-3">
                     <span>

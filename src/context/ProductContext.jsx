@@ -10,6 +10,7 @@ export const ProductProvider = ({ children }) => {
     const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
     // console.log(apiUrl);
 
+    const [allProducts, setAllProducts] = useState([])
     const [latestProduct, setLatestProduct] = useState([]);
     const [provisions, setProvisions] = useState([]);
     const [cosmeticsAndToiletries, setCosmeticsAndToiletries] = useState([]);
@@ -23,14 +24,16 @@ export const ProductProvider = ({ children }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const [latestRes, provisionsRes, cosmeticsAndToiletriesRes, wineAndDrinksRes, fragranceRes] = await Promise.all([
+                const [AllRes,latestRes, provisionsRes, cosmeticsAndToiletriesRes, wineAndDrinksRes, fragranceRes] = await Promise.all([
+                    axios.get(apiUrl),
                     axios.get(`${apiUrl}/latest`),
                     axios.get(`${apiUrl}/provisions`),
                     axios.get(`${apiUrl}/cosmeticsAndToiletries`),
                     axios.get(`${apiUrl}/winesAndDrinks`),
                     axios.get(`${apiUrl}/fragrance`)
                 ]);
-                setLatestProduct(latestRes.data);
+                setAllProducts(AllRes.data.data)
+                setLatestProduct(latestRes.data.latestProducts);
                 setProvisions(provisionsRes.data);
                 setCosmeticsAndToiletries(cosmeticsAndToiletriesRes.data);
                 setWineAndDrinks(wineAndDrinksRes.data);
@@ -46,6 +49,7 @@ export const ProductProvider = ({ children }) => {
     }, [apiUrl]); 
 
     const ProductData = {
+        allProducts,
         latestProduct,
         provisions,
         wineAndDrinks,
