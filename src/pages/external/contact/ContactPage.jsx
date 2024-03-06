@@ -5,7 +5,7 @@ import "./ContactPage.scss";
 
 const ContactPage = () => {
   return (
-    <div className="pt-[5.5rem]">
+    <div className="pt-[5.5rem] md:pt-[6.5rem] lg:pt-[8.5rem]">
       <HeroSection />
       <div className="globalcom-container">
         {" "}
