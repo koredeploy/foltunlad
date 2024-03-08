@@ -22,7 +22,7 @@ const HomePage = () => {
   
 
   return (
-    <div className="bg-white-200">
+    <div className="bg-white-200 pt-[5.5rem] md:pt-[6.5rem] lg:pt-[8.5rem]">
       <HeroSection />
       <LatestProducts latestProduct={latestProduct}/>
       <SectionTwo/>

@@ -11,9 +11,9 @@ const HeroSection = ({isFilter}) => {
   
   }, [isFilter])
   return (
-    <div className='all-product-bg'>
+    <div className='all-product-bg h-[300px] md:h-[400px] lg:h-[430px]'>
         <div className='responsive flex flex-col h-full justify-center items-center py-14'>
-            <h1 className='flex items-center gap-3 text-white-100 sm:text-5xl text-3xl text-center mt-24'>Products <span><img src={dotIcon} alt="" /> </span> {filter ? `${filter}` : "All"}</h1>
+            <h1 className='flex items-center gap-3 text-white-100 sm:text-5xl text-3xl text-center '>Products <span><img src={dotIcon} alt="" /> </span> {filter ? `${filter}` : "All"}</h1>
 
             <span className='flex justify-center items-center pt-3'>
                 <img src={arrowDown} alt="" />

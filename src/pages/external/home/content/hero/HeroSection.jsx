@@ -9,7 +9,7 @@ import pefImg from '../../../../../assets/images/perfume-img.svg'
 const HeroSection = () => {
   return (
     <div >
-        <div className='hero-section'>
+        <div className='hero-section pt-6'>
         <div className='w-11/12 mx-auto grid  grid-cols-1 lg:grid-cols-2 justify-center items-center responsive py-14'>
             <div className='text-white-100 flex flex-col justify-center items-center lg:items-start gap-5 xl:gap-8 w-full xl:w-5/6'>
                 <h1 className='text-3xl lg:text-5xl xl:text-6xl text-white-100 text-center lg:text-start'>Grocery Varieties <span className=' text-center lg:text-start fw-normal  text-3xl lg:text-4xl xl:text-5xl' >Made Available Just</span> For You.</h1>
@@ -24,7 +24,7 @@ const HeroSection = () => {
     <div className='w-11/12 mx-auto -translate-y-24  lg:-translate-y-32 z-10 grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-3 xl:gap-8 responsive'>
         <div className='bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-4 rounded-lg shadow-md h-[190px] lg:h-[260px]'>
             <img src={wholesaleIcon} alt="" />
-            <h1>Wholesale</h1>
+            <h1>Retail</h1>
             <p className=' tiny-text lg:text-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque eleifend orci consec.</p>
         </div>
         <div className='bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-4 rounded-lg shadow-md h-[190px] lg:h-[260px]'>
@@ -34,7 +34,7 @@ const HeroSection = () => {
         </div>
         <div className='bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-4 rounded-lg shadow-md h-[190px] lg:h-[260px]'>
             <img src={householdIcon} alt="" />
-            <h1>Wholesale</h1>
+            <h1>Household Needs</h1>
             <p className='tiny-text lg:text-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque eleifend orci consec.</p>
         </div>
         <div className='bg-green-100 flex flex-col gap-[0.35rem] lg:gap-3 items-start pt-3 text-start px-2 lg:px-4 lg:pt-7 rounded-lg shadow-md h-[190px] lg:h-[260px]'>

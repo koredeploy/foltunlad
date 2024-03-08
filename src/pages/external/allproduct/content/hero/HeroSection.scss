@@ -12,11 +12,11 @@
     }
 }
 
-@media (width > fn.rem(300)) {
-    .all-product-bg{
-        height: fn.rem(300);
-    }
-}
+// @media (width > fn.rem(300)) {
+//     .all-product-bg{
+//         height: fn.rem(350);
+//     }
+// }
 
 @media(width > fn.rem(400)){
     .all-product-bg{
@@ -32,7 +32,9 @@
 
 @media(width > fn.rem(1024)){
     .all-product-bg{
-        height: fn.rem(600);
+        height: fn.rem(438);
     }
     }
+
+
 
