@@ -17,7 +17,7 @@ const SectionTwo = () => {
               <h1>01.</h1>
             </div>
             <h1>Varieties of Options</h1>
-            <p className="text-base text-center  w-full  lg:w-4/6 lg:mx-auto">
+            <p className="tiny-text  md:text-base text-center  w-full  lg:w-4/6 lg:mx-auto">
               Explore our extensive selection of products across various
               categories, ensuring you find exactly what you're looking for.
             </p>
@@ -27,7 +27,7 @@ const SectionTwo = () => {
               <h1>02.</h1>
             </div>
             <h1>What we Offer</h1>
-            <p className="text-base text-center  w-full  lg:w-4/6 lg:mx-auto">
+            <p className="tiny-text md:text-base text-center  w-full  lg:w-4/6 lg:mx-auto">
               We take pride in offering only the highest quality products,
               ensuring your satisfaction with every purchase.
             </p>
@@ -37,7 +37,7 @@ const SectionTwo = () => {
               <h1>03.</h1>
             </div>
             <h1>Easy Shopping</h1>
-            <p className="text-base text-center  w-full  lg:w-4/6 lg:mx-auto">
+            <p className=" tiny-text md:text-base text-center  w-full  lg:w-4/6 lg:mx-auto">
               Enjoy a hassle-free shopping experience with our user-friendly
               website and efficient delivery service.
             </p>
@@ -47,10 +47,8 @@ const SectionTwo = () => {
               <h1>04.</h1>
             </div>
             <h1>Stand-by Team</h1>
-            <p className="text-base text-center  w-full  lg:w-4/6 lg:mx-auto">
-              Our dedicated team is always ready to assist you with any queries
-              or concerns, ensuring a seamless and satisfying shopping
-              experience.
+            <p className="tiny-text md:text-base text-center  w-full  lg:w-4/6 lg:mx-auto">
+            Our dedicated team is available to assist with any queries or concerns, ensuring a smooth and satisfying shopping experience.
             </p>
           </div>
         </div>

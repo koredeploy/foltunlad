@@ -19,7 +19,7 @@ const Testimonial = () => {
           // onSwiper={(swiper) => console.log(swiper)}
 
           autoplay={{
-            delay: 4000,
+            delay: 6000,
             disableOnInteraction: false,
           }}
           pagination={{

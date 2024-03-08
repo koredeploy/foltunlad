@@ -31,6 +31,7 @@ const HeroSection = () => {
           <div className="pb-16 ">
             <img
               className="hidden lg:block w-full items-end"
+              loading="lazy"
               src={heroImg}
               alt=""
             />
@@ -38,21 +39,21 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="w-11/12 mx-auto -translate-y-24  lg:-translate-y-32 z-10 grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-3 xl:gap-8 responsive">
-        <div className="bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-4 rounded-lg shadow-md h-[190px] lg:h-[260px]">
-          <img className="w-[50px] h-[50px]" src={wholesaleIcon} alt="" />
+        <div className="bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-6 rounded-lg shadow-md h-[190px] lg:h-[260px]">
+          <img className="w-[50px] lg:w-[59px] lg:h-[59px] h-[50px]" src={wholesaleIcon} alt="" />
           <h1>Retail</h1>
           <p className=" tiny-text lg:text-base">
           Explore diverse retail for high-quality household products, catered to you.
           </p>
         </div>
-        <div className="bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-4 rounded-lg shadow-md h-[190px] lg:h-[260px]">
-          <img src={retailIcon} alt="" />
+        <div className="bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-6 rounded-lg shadow-md h-[190px] lg:h-[260px]">
+          <img  className="w-[50px]  h-[50px]" src={retailIcon} alt="" />
           <h1>Wholesale</h1>
           <p className=" tiny-text lg:text-base">
           Our services include bulk ordering and tailored solutions for restaurants, hotels, and more.
           </p>
         </div>
-        <div className="bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-4 rounded-lg shadow-md h-[190px] lg:h-[260px]">
+        <div className="bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-6 rounded-lg shadow-md h-[190px] lg:h-[260px]">
           <img className="w-[50px] h-[50px]" src={householdIcon} alt="" />
           <h1>Household Needs</h1>
           <p className="tiny-text lg:text-base">
