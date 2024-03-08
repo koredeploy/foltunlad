@@ -14,11 +14,10 @@ const SectionOne = () => {
             We Are Trusted And Always Available To All
           </h1>
           <p className="text-center lg:text-start w-full md:w-5/6 md:mx-auto lg:w-full">
-            At our supermarket, we take pride in offering a wide range of
-            products and services tailored to meet your every need. Whether
-            you're seeking fresh produce, household essentials, or indulgent
-            treats, we strive to provide a seamless and convenient shopping
-            experience.
+            At our supermarket, we offer a diverse selection of products and
+            services to meet your needs. Whether you're shopping for fresh
+            produce, household essentials, or indulgent treats, we aim to make
+            your experience seamless and convenient.
           </p>
 
           <div className="grid w-full md:w-[96%] md:mx-auto lg:w-full  grid-cols-2 gap-4 md:gap-10 py-10">
@@ -45,9 +44,8 @@ const SectionOne = () => {
                   Household Needs
                 </h3>
                 <p className="small-text md:w-5/6 md:mx-auto md:text-center lg:text-start lg:w-full">
-                  eep your home well-stocked with our dedicated section for
-                  household essentials, from cleaning supplies to organizational
-                  tools.
+                  Keep your home well-stocked with our dedicated section for
+                  household essentials to cleaning supplies.
                 </p>
               </div>
             </div>

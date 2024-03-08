@@ -46,16 +46,14 @@ const HeroSection = () => {
           <h1>Retail</h1>
           <p className=" tiny-text lg:text-base">
             Explore our extensive retail section, offering a wide range of
-            high-quality products for all your household needs, from fresh
-            produce to personal care items.
+            high-quality products for all your household needs.
           </p>
         </div>
         <div className="bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-4 rounded-lg shadow-md h-[190px] lg:h-[260px]">
           <img src={retailIcon} alt="" />
           <h1>Wholesale</h1>
           <p className=" tiny-text lg:text-base">
-            Cater to your business needs with our comprehensive wholesale
-            program, providing bulk ordering options and customized solutions
+            We cater and provide bulk ordering options and customized solutions
             for restaurants, hotels, and more.
           </p>
         </div>
@@ -64,8 +62,7 @@ const HeroSection = () => {
           <h1>Household Needs</h1>
           <p className="tiny-text lg:text-base">
             Keep your home well-stocked with our dedicated section for household
-            essentials, including cleaning supplies, paper products, and
-            organizational tools.
+            essentials and cleaning supplies.
           </p>
         </div>
         <div className="bg-green-100 flex flex-col gap-[0.35rem] lg:gap-3 items-start pt-3 text-start px-2 lg:px-4 lg:pt-7 rounded-lg shadow-md h-[190px] lg:h-[260px]">
