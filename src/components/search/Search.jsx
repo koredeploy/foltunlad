@@ -1,31 +1,52 @@
-import { useState } from "react"
-import {useNavigate} from "react-router-dom"
+import { useContext, useState, useRef, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import blackSearch from "../../assets/icons/search-black.svg"
 import graySearch from "../../assets/icons/search-gray.svg"
+import ProductContext from "../../context/ProductContext"
 
 
 const Search = ({setIsSearch}) => {
+    const {setSearch} = useContext(ProductContext)
     const navigate = useNavigate()
-    const [search, setSearch] = useState("")
+    const container = useRef(null)
+    const [searchParams, setSearchParams] = useState("")
     
+
+   
 
     const handleSearch = (e) => {
         e.preventDefault()
-        window.scrollTo(0, 0)
-        const encodedSearch = encodeURIComponent(search);
-        navigate(`/products/?search=${encodedSearch}`)
+        if (searchParams.length < 1) {
+            return
+        }
+        else {
+        setSearch(searchParams)
         setIsSearch(false)
-        window.location.reload()
+        navigate("/products")
+        }
     } 
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (container.current && !container.current.contains(e.target)) {
+             
+                setIsSearch(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [setIsSearch])
 
     
   return (
-    <div className="absolute z-40 bg-white-100 max-w-[1200px] w-full mx-auto h-[404px] p-6 lg:top-[-2px] top-[84px] lg:-left-[0px] right-[0px] rounded-none lg:rounded-3xl shadow-2xl border-2 border-gray-300">
+    <div ref={container} className="absolute z-40 bg-white-100 max-w-[1200px] w-full mx-auto h-[404px] p-6 lg:top-[-2px] top-[84px] lg:-left-[0px] right-[0px] rounded-none lg:rounded-3xl shadow-2xl border-2 border-gray-300">
         <div className="flex flex-col gap-7">
             <div>
                 <form className="flex gap-3 items-center relative" onSubmit={handleSearch}>
                 <img src={blackSearch} alt="" className="absolute left-3" />
-                <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} className="w-full text-xl px-12 border-x-0 border-t-0 border-b-2 border-gray-300 outline-none h-12" />
+                <input type="text" value={searchParams} onChange={(e) => setSearchParams(e.target.value)} className="w-full text-xl px-12 border-x-0 border-t-0 border-b-2 border-gray-300 outline-none h-12" />
                 </form>
             </div>
 

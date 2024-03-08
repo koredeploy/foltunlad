@@ -73,7 +73,7 @@ const Navbar = () => {
               <ul  className="flex lg:flex-row flex-col gap-12 text-xl items-center pt-10 lg:pt-0">
                 <li><Link to="/" className={pathname === "/" ? "text-green-100" : null}>Home</Link></li>
                 <li><Link to="/about" className={pathname === "/about" ? "text-green-100" : null}>About</Link></li>
-                <li><Link to="/products" className={pathname.includes("/products") ? "text-green-100" : null}>Product</Link></li>
+                <li><Link to="/products" className={pathname === "/products" ? "text-green-100" : null}>Product</Link></li>
                 <li><Link to="/contact" className={pathname === "/contact" ? "text-green-100" : null}>Contact</Link></li>
               </ul>
             </nav>

@@ -5,7 +5,7 @@ import SkeletonLoader from "../../../../../components/loader/SkeletonLoader";
 import ProductPageLoader from "../../../../../components/loader/ProductPageLoader";
 
 // eslint-disable-next-line react/prop-types
-const Products = ({ getFilter }) => {
+const Products = () => {
   const {
     allProducts,
     latestProduct,
@@ -14,10 +14,11 @@ const Products = ({ getFilter }) => {
     wineAndDrinks,
     cosmeticsAndToiletries,
     loading,
+    searchProducts,
+    error
   } = useContext(ProductContext);
   
   const [products, setProducts] = useState([]);
-  const [filter, setFilter] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
 
   const itemsPerPage = 12;
@@ -41,36 +42,19 @@ const Products = ({ getFilter }) => {
   }
 
   useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
-    const searchValue = searchParams.get("search");
-    if (searchValue) {
-      setFilter(searchValue);
+    if (error) {
+      setProducts([])
+    }else if (searchProducts.length >= 1) {
+      setProducts(searchProducts)
     }
-  }, []);
+    
+    else{
+      setProducts(allProducts)
+    }
+    
+  }, [searchProducts, error, allProducts]);
 
-  useEffect(() => {
-    if (filter === "Provisions") {
-      setProducts(provisions);
-    } else if (filter === "Cosmetics") {
-      setProducts(cosmeticsAndToiletries);
-    } else if (filter === "Wines") {
-      setProducts(wineAndDrinks);
-    } else if (filter === "Fragrances") {
-      setProducts(fragrance);
-    } else {
-      setProducts(allProducts);
-    }
-    setCurrentPage(1);
-    getFilter(filter);
-  }, [
-    filter,
-    allProducts,
-    provisions,
-    cosmeticsAndToiletries,
-    wineAndDrinks,
-    fragrance,
-    getFilter,
-  ]);
+  
 
   return (
     <div className="py-24">
@@ -83,47 +67,37 @@ const Products = ({ getFilter }) => {
             <h2 className=" text-4xl">Category</h2>
             <div className="w-full space-y-5 py-5">
               <button
-                className={`${
-                  filter === "All" && "text-green-100"
-                } flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
-                onClick={() => setFilter("All")}
+                className={` flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
+                onClick={() => setProducts(allProducts)}
               >
                 All <span>{allProducts?.length}</span>
               </button>
 
               <button
-                className={`${
-                  filter === "Provisions" && "text-green-100"
-                } flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
-                onClick={() => setFilter("Provisions")}
+                className={`flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
+                onClick={() => setProducts(provisions)}
               >
                 Provision <span>{provisions?.length}</span>
               </button>
 
               <button
-                className={`${
-                  filter === "Cosmetics" && "text-green-100"
-                } flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
-                onClick={() => setFilter("Cosmetics")}
+                className={` flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
+                onClick={() => setProducts(cosmeticsAndToiletries)}
               >
                 Cosmetics & Toiletries{" "}
                 <span>{cosmeticsAndToiletries?.length}</span>
               </button>
 
               <button
-                className={`${
-                  filter === "Wines" && "text-green-100"
-                } flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
-                onClick={() => setFilter("Wines")}
+                className={`flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
+                onClick={() => setProducts(wineAndDrinks)}
               >
                 Wine & Drinks <span>{wineAndDrinks?.length}</span>
               </button>
 
               <button
-                className={`${
-                  filter === "Fragrances" && "text-green-100"
-                } flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
-                onClick={() => setFilter("Fragrances")}
+                className={` flex w-full justify-between cursor-pointer text-xl hover:text-green-100 focus:text-green-100`}
+                onClick={() => setProducts(fragrance)}
               >
                 Fragrances <span>{fragrance?.length}</span>
               </button>
@@ -163,6 +137,7 @@ const Products = ({ getFilter }) => {
 
         <div className="w-11/12 mx-auto ">
         {loading && <ProductPageLoader/>}
+        {error && currentItems.length < 1 && <div className="w-full h-80 flex flex-col gap-3 justify-center items-center"><span className="text-4xl text-center">😭</span><h2 className="text-center text-3xl text-green-100">{error}</h2> <span className="text-center">Search Other Items</span></div>}
           <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
             {currentItems?.map((product) => {
               const { _id, productName, amount, category, image } = product;

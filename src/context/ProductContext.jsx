@@ -16,8 +16,16 @@ export const ProductProvider = ({ children }) => {
     const [cosmeticsAndToiletries, setCosmeticsAndToiletries] = useState([]);
     const [wineAndDrinks, setWineAndDrinks] = useState([]);
     const [fragrance, setFragrance] = useState([]);
+    const [search, setSearch] = useState("")
+    const [error, setError] = useState("")
+    const [searchProducts, setSearchProducts] = useState([])
     const [loading, setLoading] = useState(true);
     const [open, setOpen] = useState(false)
+
+
+    
+        
+
 
     
 
@@ -45,8 +53,28 @@ export const ProductProvider = ({ children }) => {
             }
         };
 
+        const handleSearch = async () => {
+
+        
+            try {
+                setLoading(true)
+                const {data} = await axios(`${apiUrl}/search/${search}`)
+                console.log(data);
+                setSearchProducts(data)
+                setLoading(false)
+                setError("")
+            } catch (error) {
+                console.log(error);
+                setLoading(false)
+                setError("No Product fit your search")
+            }
+        }
+
         fetchData();
-    }, [apiUrl]); 
+        if (search.trim() !== "") {
+             handleSearch()
+        }
+    }, [apiUrl, search]); 
 
     const ProductData = {
         allProducts,
@@ -58,6 +86,10 @@ export const ProductProvider = ({ children }) => {
         loading,
         open,
         setOpen,
+        setSearch,
+        search,
+        searchProducts,
+        error
     };
     // console.log(latestProduct);
     // console.log(provisions);
