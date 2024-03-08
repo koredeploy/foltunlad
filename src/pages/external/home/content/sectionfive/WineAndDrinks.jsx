@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 import './WineAndDrinks.scss'
+import { useContext } from 'react';
+import ProductContext from '../../../../../context/ProductContext';
+import SkeletonLoader from '../../../../../components/loader/SkeletonLoader';
 
 const WineAndDrinks = ({products}) => {
+  const {loading} = useContext(ProductContext)
+
   return (
     <div>
         <div className='w-11/12 mx-auto responsive py-14'>
@@ -9,6 +14,7 @@ const WineAndDrinks = ({products}) => {
             <h1 className='big-text'>Wines & Drinks</h1>
             <h2 className='text-green-100 '>View All</h2>
             </div>
+            {loading && <SkeletonLoader/>}
             <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10 py-5'>
           {products?.slice(0, 4).map((product) => (
     <div key={product._id} className="small-screen flex flex-col border border-gray-300 rounded-lg p-4 items-center justify-between h-[275px] md:h-[360px] xl:h-[400px] ">

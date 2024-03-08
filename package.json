@@ -17,6 +17,7 @@
     "hamburger-react": "^2.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-loading-skeleton": "^3.4.0",
     "react-router-dom": "^6.22.1",
     "sass": "^1.71.1",
     "swiper": "^11.0.7"

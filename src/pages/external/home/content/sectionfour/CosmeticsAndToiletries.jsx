@@ -1,11 +1,14 @@
 import './CostmeticsAndToiletries.scss'
 import PropTypes from 'prop-types';
 
-import React from 'react'
+import React, { useContext } from 'react'
+import ProductContext from '../../../../../context/ProductContext';
+import SkeletonLoader from '../../../../../components/loader/SkeletonLoader';
 
 // eslint-disable-next-line react/prop-types
 const CosmeticsAndToiletries = ({products}) => {
   // console.log(products);
+  const {loading} = useContext(ProductContext)
   return (
     
        <div>
@@ -14,6 +17,7 @@ const CosmeticsAndToiletries = ({products}) => {
             <h1 className='big-text'>Costmetics & Toiletries</h1>
             <h2 className='text-green-100 '>View All</h2>
             </div>
+            {loading && <SkeletonLoader/>}
             <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10 py-5'>
           {products?.slice(0, 4).map((product) => (
     <div key={product._id} className="small-screen flex flex-col border border-gray-300 rounded-lg p-4 items-center justify-between h-[275px] md:h-[360px] xl:h-[400px] ">

@@ -2,14 +2,15 @@ import "./LatestProducts.scss";
 import prev from "../../../../../assets/icons/prev.svg";
 import next from "../../../../../assets/icons/next.svg";
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import ProductContext from "../../../../../context/ProductContext";
+import SkeletonLoader from "../../../../../components/loader/SkeletonLoader";
 
 const LatestProducts = ({
   // eslint-disable-next-line react/prop-types
   latestProduct,
 }) => {
-  // eslint-disable-next-line react/prop-types
-  // const { latestProducts } = latestProduct;
-  // console.log(latestProduct);
+const {loading} = useContext(ProductContext)
   return (
     <div>
       <div className="w-11/12 mx-auto responsive pt-2 pb-14">
@@ -20,6 +21,7 @@ const LatestProducts = ({
             <img className="w-[25px] h-[25px]" src={next} alt="" />
           </div>
         </div>
+          {loading && <SkeletonLoader/>}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10 py-5">
           {latestProduct?.map((product) => (
             <div

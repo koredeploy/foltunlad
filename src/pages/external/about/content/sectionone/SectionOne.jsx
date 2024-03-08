@@ -78,12 +78,12 @@ const SectionOne = () => {
               <h1 className="text-center text-3xl pt-2">500+</h1>
             </div>
             <div>
-              <img src={mallImg1} alt="" />
+              <img loading="lazy" src={mallImg1} alt="" />
             </div>
           </div>
           <div className="flex flex-col gap-4 md:gap-9 lg:gap-7">
             <div>
-              <img src={mallImg2} alt="" />
+              <img loading="lazy" src={mallImg2} alt="" />
             </div>
             {/*  */}
             <div className="h-40 lg:h-48 bg-gradient-to-r from-orange-200 to-orange-100 p-3 lg:p-10 text-white-100 rounded-md flex flex-col items-center justify-center">

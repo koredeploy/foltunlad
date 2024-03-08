@@ -1,6 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import "./Products.scss";
 import ProductContext from "../../../../../context/ProductContext";
+import SkeletonLoader from "../../../../../components/loader/SkeletonLoader";
+import ProductPageLoader from "../../../../../components/loader/ProductPageLoader";
 
 // eslint-disable-next-line react/prop-types
 const Products = ({ getFilter }) => {
@@ -11,6 +13,7 @@ const Products = ({ getFilter }) => {
     fragrance,
     wineAndDrinks,
     cosmeticsAndToiletries,
+    loading,
   } = useContext(ProductContext);
   
   const [products, setProducts] = useState([]);
@@ -128,7 +131,7 @@ const Products = ({ getFilter }) => {
           </div>
           <div>
             <h2 className="text-4xl">Best Sellers</h2>
-
+            
             <div className=" space-y-4 py-5">
               {latestProduct?.map((product) => {
                 return (
@@ -159,6 +162,7 @@ const Products = ({ getFilter }) => {
         </div>
 
         <div className="w-11/12 mx-auto ">
+        {loading && <ProductPageLoader/>}
           <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
             {currentItems?.map((product) => {
               const { _id, productName, amount, category, image } = product;
