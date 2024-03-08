@@ -15,9 +15,10 @@ const Section2 = () => {
         <div className="flex flex-col gap-3">
           <h1 className="text-4xl">Get In Touch</h1>
           <p className="text-base w-full lg:w-5/6">
-            Lorem ipsum dolor sit amet, consetur adipiscing elit. Dignissim
-            lvinar placerat nulla ipsum pretium itur enim tortolom in ut viverra
-            nibh duis quis.
+            We value open communication and strive to provide exceptional
+            customer service. Whether you have a question, a concern, or simply
+            wish to share your feedback, our dedicated team is here to assist
+            you.
           </p>
         </div>
         <div className="flex flex-col gap-10">

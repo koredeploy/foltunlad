@@ -14,7 +14,7 @@ const SectionTwo = () => {
                 <p className='text-white-100 tiny-text'>Best Seller</p>
                 </div>
                 <h1 className='text-white-100 big-text'>Aptamil</h1>
-                <p className='text-white-100 text-sm'>Lorem ipsum dolor.</p>
+                <p className='text-white-100 text-sm'>Quality and Affordable.</p>
                 </div>
             </div>
             <div className='best-seller-bg-two p-4 justify-evenly flex items-center h-[207px] md:h-[232px]  rounded-xl'>
@@ -24,7 +24,7 @@ const SectionTwo = () => {
                 <p className='text-white-100 tiny-text'>Best Seller</p>
                 </div>
                 <h1 className='text-white-100 big-text'>Fox’s Cookies</h1>
-                <p className='text-white-100 text-sm'>Lorem ipsum dolor.</p>
+                <p className='text-white-100 text-sm'>Worth Every Bite.</p>
                 </div>
             </div>
             <div className='best-seller-bg-three justify-evenly flex p-4 items-center h-[207px] md:h-[232px] rounded-xl'>
@@ -34,7 +34,7 @@ const SectionTwo = () => {
                 <p className='text-white-100 tiny-text'>Best Seller</p>
                 </div>
                 <h1 className='text-white-100 big-text'>5Alive Pulpy</h1>
-                <p className='text-white-100 text-sm'>Lorem ipsum dolor.</p>
+                <p className='text-white-100 text-sm'>A Sip is all it takes.</p>
                 </div>
             </div>
         </div>

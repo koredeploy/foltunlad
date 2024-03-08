@@ -22,9 +22,11 @@ const Footer = () => {
               <img className=" w-48 md:w-auto" src={logo} alt="" />
             </Link>
             <p className=" text-center font-medium text-lg lg:text-start md:w-3/5 md:mx-auto lg:mx-0 lg:w-[384px] ">
-              Lorem ipsum dolor sit amet, consectetur adiping elit. Dis sed a in
-              feugiat pele. A mattis tortor a, netus amet dolor. feugiat
-              pelleque. A mattis tortor a, netus amet dol.
+              At our supermarket, we believe in providing more than just
+              groceries – we strive to offer a comprehensive shopping experience
+              that caters to all your needs. From farm-fresh produce to
+              household essentials and indulgent treats, our carefully curated
+              selection reflects our commitment to quality and convenience.
             </p>
 
             <div className="flex gap-6 cursor-pointer">
