@@ -19,11 +19,8 @@ const HeroSection = () => {
               </span>{" "}
               For You.
             </h1>
-            <p className="text-white-100 fw-light  text-center lg:text-start">
-              Discover a shopping experience like no other at our supermarket,
-              where we strive to provide you with a one-stop shopping experience
-              like no other. From essential household items to indulgent treats,
-              our expansive selection caters to every need and craving.
+            <p className="text-white-100 fw-light  text-center lg:text-start w-11/12 md:w-full">
+            Explore a unique supermarket offering unparalleled one-stop shopping, providing essential household items and indulgent treats, catering to diverse needs and cravings for an exceptional shopping experience.
             </p>
             <Link to="/products">
               <button className="px-4 py-3 w-48 rounded-full bg-green-100 text-white-100">
@@ -42,23 +39,21 @@ const HeroSection = () => {
       </div>
       <div className="w-11/12 mx-auto -translate-y-24  lg:-translate-y-32 z-10 grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-3 xl:gap-8 responsive">
         <div className="bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-4 rounded-lg shadow-md h-[190px] lg:h-[260px]">
-          <img src={wholesaleIcon} alt="" />
+          <img className="w-[50px] h-[50px]" src={wholesaleIcon} alt="" />
           <h1>Retail</h1>
           <p className=" tiny-text lg:text-base">
-            Explore our extensive retail section, offering a wide range of
-            high-quality products for all your household needs.
+          Explore diverse retail for high-quality household products, catered to you.
           </p>
         </div>
         <div className="bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-4 rounded-lg shadow-md h-[190px] lg:h-[260px]">
           <img src={retailIcon} alt="" />
           <h1>Wholesale</h1>
           <p className=" tiny-text lg:text-base">
-            We cater and provide bulk ordering options and customized solutions
-            for restaurants, hotels, and more.
+          Our services include bulk ordering and tailored solutions for restaurants, hotels, and more.
           </p>
         </div>
         <div className="bg-white-200 flex flex-col lg:gap-3 items-center justify-center text-center gap-1 px-3  lg:p-4 rounded-lg shadow-md h-[190px] lg:h-[260px]">
-          <img src={householdIcon} alt="" />
+          <img className="w-[50px] h-[50px]" src={householdIcon} alt="" />
           <h1>Household Needs</h1>
           <p className="tiny-text lg:text-base">
             Keep your home well-stocked with our dedicated section for household
@@ -74,8 +69,7 @@ const HeroSection = () => {
             OudTouch Frank Olivier
           </h1>
           <p className="text-white-100 tiny-text lg:text-base font-thin">
-            Indulge in the finest fragrances from our carefully curated
-            collection, featuring captivating scents to elevate any occasion.
+          Enjoy exquisite fragrances from our carefully curated collection, for any occasion.
           </p>
           <a className="text-white-100  text-[14px]  md:text-base lg:text-xl cursor-pointer">
             Learn More
